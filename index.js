@@ -1,6 +1,6 @@
 
 
-const {USERS:users, USER:user,SDK, FLAG} = require('./config.json')
+const {USER:user,SDK, FLAG} = require('./config.json')
 const  LaunchDarkly = require('launchdarkly-node-client-sdk');
 
 
@@ -8,6 +8,10 @@ const  LaunchDarkly = require('launchdarkly-node-client-sdk');
     var ldClient;  // LaunchDarkly client variable
 
     try{
+        if (!SDK.CLIENT_ID){
+            console.log(`CLIENT_ID is not set, quitting.`);
+            return 
+        }
         ldClient = LaunchDarkly.initialize(SDK.CLIENT_ID, user);  // initialize with Client iD and user object
         await ldClient.waitForInitialization(); // wait for initialize to complete 
         
@@ -22,9 +26,14 @@ const  LaunchDarkly = require('launchdarkly-node-client-sdk');
 
     }catch (error){
         console.log(`error=${error}`);
+        
     }finally{
-        ldClient.close();
-        console.log(`closed LaunchDarkly client`);
+        if (ldClient){
+            ldClient.close();
+            console.log(`closed LaunchDarkly client`);
+        }
+        
+        
     }
     
     
