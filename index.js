@@ -1,29 +1,3 @@
-# ld-demo
-Sample LaunchDarkly feature flag implementation.
-
-### Configuration File
-*File:config.json*
-```
-{
-    "SDK": {
-        "CLIENT_ID": "xxxxxxxxxxx",   // Your client ID
-        "DEFAULT_VARIATION": false
-    },
-    "FLAG": {
-        "key": "demo-flag",  // feature flag
-        "default": false
-    },
-    "USER": {
-        "key": "user-key",
-        "name": "testUser01"
-    }
-   
-}
-```
-
-
-### CODE
-```
 
 
 const {USERS:users, USER:user,SDK, FLAG} = require('./config.json')
@@ -56,18 +30,3 @@ const  LaunchDarkly = require('launchdarkly-node-client-sdk');
     
 })()
 
-
-
-
-```
-
-
-
-#### OUTPUT
-```
-ld-demo % node index.js
-info: [LaunchDarkly] LaunchDarkly client initialized
-User=[{"key":"user-key","name":"testUser01"}] flagValue=[true]
-show feature
-closed LaunchDarkly client
-```

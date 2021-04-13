@@ -1,0 +1,22 @@
+{
+  "name": "ld-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenb888021/ld-demo.git"
+  },
+  "author": "",
+  "license": "Apache2.0",
+  "bugs": {
+    "url": "https://github.com/chenb888021/ld-demo/issues"
+  },
+  "homepage": "https://github.com/chenb888021/ld-demo#readme",
+  "dependencies": {
+    "launchdarkly-node-client-sdk": "^1.5.1"
+  }
+}

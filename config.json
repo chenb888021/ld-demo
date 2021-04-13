@@ -1,0 +1,23 @@
+{
+    "SDK": {
+        "CLIENT_ID": "",
+        "DEFAULT_VARIATION": false
+    },
+    "FLAG": {
+        "key": "demo-flag",
+        "default": false
+    },
+    "USER": {
+        "key": "user-key",
+        "name": "testUser01"
+    },
+    "USERS":[ {
+                "key": "user-key",
+                "name": "testUser01"
+            },
+            {
+                "key": "user-key2",
+                "name": "testUser02"
+            }
+    ]
+}
